@@ -1,11 +1,16 @@
 import { ReactNode } from "react";
 
 export interface ContextTypes {
-    open: boolean;
-    showModal: () => void;
-    hideModal: () => void;
+  user: {
+    username: string;
+    password: string;
+  };
+  setUser: React.Dispatch<
+    React.SetStateAction<{ username: string; password: string }>
+  >;
+  authUser: () => void;
 }
 
-  export interface ContextProviderTypes {
-    children: ReactNode;
+export interface ContextProviderTypes {
+  children: ReactNode;
 }

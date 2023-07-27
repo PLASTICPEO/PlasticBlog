@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+
 import DefaultLayout from "./layout";
 import Home from "./pages/home";
 import SecondPage from "./pages/pageSecond";
@@ -15,14 +16,7 @@ const App = () => {
           </DefaultLayout>
         }
       />
-      <Route
-        path="/secondPage"
-        element={
-          <DefaultLayout>
-            <SecondPage />
-          </DefaultLayout>
-        }
-      />
+      <Route path="/secondPage" element={<SecondPage />} />
     </Routes>
   );
 };

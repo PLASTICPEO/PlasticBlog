@@ -1,10 +1,9 @@
-import { Button, Modal } from "antd";
+import { Button, Modal, Input } from "antd";
 
 import Footer from "./components";
 
 import { useModal } from "./hooks/useModal";
 import { ModalTypes } from "./modal.types";
-import { useEffect } from "react";
 
 const CustomModal: React.FC<ModalTypes> = ({
   as,
@@ -15,10 +14,6 @@ const CustomModal: React.FC<ModalTypes> = ({
   const { open, showModal, hideModal } = useModal();
 
   const Trigger = as ? as : Button;
-
-  useEffect(() => {
-    console.log(triggerProps);
-  }, []);
 
   return (
     <div>
@@ -36,7 +31,7 @@ const CustomModal: React.FC<ModalTypes> = ({
         open={open}
         onOk={hideModal}
         onCancel={hideModal}
-        footer={<Footer />}
+        footer={<Footer hideModal={hideModal} footer={triggerProps.footer} />}
       >
         <div>{children}</div>
       </Modal>

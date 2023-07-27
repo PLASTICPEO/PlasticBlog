@@ -3,7 +3,16 @@ import SideContent from "../../components/sideContent";
 import TopContent from "../../components/topContent";
 import Trending from "../../components/trending";
 
+import { useUserData } from "../../api/api";
+import { useEffect } from "react";
+
 const Home = (): JSX.Element => {
+  const { isLoading, error, data } = useUserData(["userData"]);
+
+  useEffect(() => {
+    console.log(data, isLoading, error);
+  }, [data, isLoading, error]);
+
   return (
     <div className="h-screen w-full">
       <div className="pt-14">

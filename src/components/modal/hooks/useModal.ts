@@ -5,6 +5,7 @@ export const useModal = () => {
 
   const showModal = () => {
     setOpen(true);
+    console.log("შოუ მოდალ");
   };
 
   const hideModal = () => {

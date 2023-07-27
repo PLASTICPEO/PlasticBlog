@@ -2,7 +2,7 @@ import ship from "../../assets/photos/ship.svg";
 
 const TopContent = () => {
   return (
-    <div className="bg-[#5295CB] pl-20  h-96 flex items-center justify-between font-Roboto">
+    <div className="bg-[#5295CB] pl-20  h-96 flex items-center justify-between font-Roboto border-b-[1px] border-[#0A0A0B]">
       <div>
          <p className="text-6xl font-lora">Stay curious.</p>
         <p className="text-xl w-[350px] mt-6 ">

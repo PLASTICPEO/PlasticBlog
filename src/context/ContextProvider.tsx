@@ -1,29 +1,28 @@
+// contextProvider.tsx
+
 import { createContext, useState } from "react";
 import { ContextTypes, ContextProviderTypes } from "./context.types";
 
+// Use the ContextTypes interface as the type for AppContext
 export const AppContext = createContext<ContextTypes>({
-  open: false,
-  showModal: () => {},
-  hideModal: () => {},
+  user: { username: "", password: "" },
+  authUser: () => {},
+  setUser: () => {},
 });
 
 const ContextProvider = ({ children }: ContextProviderTypes) => {
-  const [open, setOpen] = useState(false);
+  const [user, setUser] = useState({ username: "", password: "" });
 
-  const showModal = () => {
-    setOpen(true);
-  };
-
-  const hideModal = () => {
-    setOpen(false);
+  const authUser = () => {
+    console.log(user);
   };
 
   return (
     <AppContext.Provider
       value={{
-        open,
-        showModal,
-        hideModal,
+        user,
+        authUser,
+        setUser,
       }}
     >
       {children}
