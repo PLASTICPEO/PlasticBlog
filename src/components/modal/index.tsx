@@ -8,7 +8,7 @@ import { ModalTypes } from "./modal.types";
 const CustomModal: React.FC<ModalTypes> = ({
   as,
   children,
-  title,
+  buttonValue,
   triggerProps,
 }) => {
   const { open, showModal, hideModal } = useModal();
@@ -17,21 +17,15 @@ const CustomModal: React.FC<ModalTypes> = ({
 
   return (
     <div>
-      {triggerProps
-        ? triggerProps?.buttonname.map((buttonValue: any, index: number) => {
-            return (
-              <Trigger onClick={showModal} key={index} {...triggerProps}>
-                {buttonValue}
-              </Trigger>
-            );
-          })
-        : null}
+      <Trigger onClick={showModal} {...triggerProps}>
+        {buttonValue}
+      </Trigger>
+
       <Modal
-        title={title}
         open={open}
         onOk={hideModal}
         onCancel={hideModal}
-        footer={<Footer hideModal={hideModal} footer={triggerProps.footer} />}
+        footer={<Footer hideModal={hideModal} btnValue={buttonValue} />}
       >
         <div>{children}</div>
       </Modal>

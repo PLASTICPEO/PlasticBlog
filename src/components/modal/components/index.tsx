@@ -1,24 +1,14 @@
 import { Button } from "antd";
 
-const Footer: React.FC<{ hideModal: () => void; footer?: any }> = ({
+const Footer: React.FC<{ hideModal: () => void; btnValue: any }> = ({
   hideModal,
-  footer,
+  btnValue,
 }) => {
-  console.log(footer);
   return (
     <div className="flex items-center justify-center">
-      {footer.buttonText.map((item: any, index: number) => {
-        return (
-          <Button
-            type="primary"
-            ghost
-            key={index}
-            className={`${footer.style}`}
-          >
-            {item}
-          </Button>
-        );
-      })}
+      <Button type="primary" ghost>
+        {btnValue}
+      </Button>
     </div>
   );
 };

@@ -29,20 +29,24 @@ const Header = () => {
           </div>
         </Link>
       </div>
-
-      <CustomModal
-        title="Log in"
-        triggerProps={{
-          className: `m-2 ${changeHeaderButtonColor}`,
-          buttonname: ["Sign in", "Sign up"],
-          footer: {
-            buttonText: ["ჯემო", "ჯუნო"],
-            style: "border-[black] hover:opacity-60",
-          },
-        }}
-      >
-        <div></div>
-      </CustomModal>
+      <div className="flex">
+        <CustomModal
+          triggerProps={{
+            className: `m-2 ${changeHeaderButtonColor}`,
+          }}
+          buttonValue="Sign in"
+        >
+          <div></div>
+        </CustomModal>
+        <CustomModal
+          triggerProps={{
+            className: `m-2 ${changeHeaderButtonColor}`,
+          }}
+          buttonValue="Sign up"
+        >
+          <div></div>
+        </CustomModal>
+      </div>
     </div>
   );
 };
