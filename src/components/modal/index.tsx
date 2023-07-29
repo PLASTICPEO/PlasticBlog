@@ -1,31 +1,44 @@
-import { Button, Modal, Input } from "antd";
+import { Button, Modal, ConfigProvider } from "antd";
 
-import Footer from "./components";
+import Footer from "./components/footer";
+import ModalHeader from "./components/header";
 
-import { useModal } from "./hooks/useModal";
+import { useContext } from "react";
+import { AppContext } from "../../context/ContextProvider";
+
 import { ModalTypes } from "./modal.types";
 
 const CustomModal: React.FC<ModalTypes> = ({
   as,
   children,
   buttonValue,
+  title,
   triggerProps,
 }) => {
-  const { open, showModal, hideModal } = useModal();
+  const { open, showModal, hideModal } = useContext(AppContext);
 
   const Trigger = as ? as : Button;
 
   return (
     <div>
-      <Trigger onClick={showModal} {...triggerProps}>
-        {buttonValue}
-      </Trigger>
+      <div>
+        <ConfigProvider
+          theme={{
+            token: { colorPrimaryHover: "black" },
+          }}
+        >
+          <Trigger onClick={showModal} {...triggerProps}>
+            {buttonValue}
+          </Trigger>
+        </ConfigProvider>
+      </div>
 
       <Modal
         open={open}
         onOk={hideModal}
         onCancel={hideModal}
-        footer={<Footer hideModal={hideModal} btnValue={buttonValue} />}
+        title={<ModalHeader title={title} />}
+        footer={<Footer />}
       >
         <div>{children}</div>
       </Modal>

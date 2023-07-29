@@ -3,20 +3,24 @@ import { useContext } from "react";
 import { AppContext } from "../../context/ContextProvider";
 
 import { Input } from "antd";
+
 import { Link } from "react-router-dom";
+
+// import { useUserData } from "../../api/api";
 
 import CustomModal from "../modal";
 import Logo from "../../assets/logo.svg";
+import LogInContent from "./loginContent";
 
 const Header = () => {
-  // const { user, setUser } = useContext(AppContext);
   const { scrollY } = useHeader();
+  // const { isLoading, error, data } = useUserData(["userData"]);
 
   const changeHeaderColor = scrollY < 290 ? "bg-[#5295CB]" : "bg-[#F6F6F4]";
   const changeHeaderButtonColor =
     scrollY < 290
-      ? "text-[black] border-none bg-[#ACD9EC] hover:opacity-60"
-      : "text-[#5295CB] border-[#5295CB] hover:opacity-60";
+      ? "text-[#FFFFFF] border-[#5295CB] bg-[black] "
+      : "text-[#70C1B3] border-[#70C1B3] ";
 
   return (
     <div
@@ -32,20 +36,22 @@ const Header = () => {
       <div className="flex">
         <CustomModal
           triggerProps={{
-            className: `m-2 ${changeHeaderButtonColor}`,
+            className: `m-2 hover:bg-[#FFFFFF]  ${changeHeaderButtonColor}`,
           }}
           buttonValue="Sign in"
+          title="Welcome Back."
         >
-          <div></div>
+          <LogInContent />
         </CustomModal>
-        <CustomModal
+        {/* <CustomModal
           triggerProps={{
-            className: `m-2 ${changeHeaderButtonColor}`,
+            className: `m-2 hover:bg-[#FFFFFF] ${changeHeaderButtonColor}`,
           }}
           buttonValue="Sign up"
+          title="Join us."
         >
           <div></div>
-        </CustomModal>
+        </CustomModal> */}
       </div>
     </div>
   );
