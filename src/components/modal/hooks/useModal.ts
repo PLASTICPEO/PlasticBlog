@@ -1,24 +1,19 @@
-// import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// export const useModal = () => {
-//   const [open, setOpen] = useState(false);
+export const useModal = () => {
+  const [open, setOpen] = useState(false);
 
-//   const showModal = () => {
-//     setOpen(true);
-//     console.log("შოუ მოდალ");
-//   };
+  useEffect(() => {
+    console.log(open);
+  }, [open]);
 
-//   const hideModal = () => {
-//     setOpen(false);
-//   };
+  const showModal = () => {
+    setOpen(true);
+  };
 
-//   const authorization = () => {
-//     console.log("Log in");
-//   };
+  const hideModal = () => {
+    setOpen(false);
+  };
 
-//   const registration = () => {
-//     console.log("Sign in");
-//   };
-
-//   return { open, showModal, hideModal, authorization, registration };
-// };
+  return { open, showModal, hideModal };
+};

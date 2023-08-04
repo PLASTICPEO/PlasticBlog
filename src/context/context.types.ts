@@ -1,11 +1,8 @@
 import { ReactNode } from "react";
 
 export interface ContextTypes {
-  onFinish: (values: any) => void;
-  showModal: () => void;
-  hideModal: () => void;
-  open: boolean;
-  wrongInput: boolean;
+  close: boolean;
+  closeModal: () => void;
 }
 
 export interface ContextProviderTypes {

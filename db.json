@@ -2,18 +2,31 @@
     "users": [
       {
         "id": 1,
-        "user": "giodavlasheridze88@gmail.com",
-        "password": "giogio"
+        "user": "Gio1",
+        "password": "giogio",
+        "accessToken": "token1"
       },
       {
         "id": 2,
-        "user": "giodavlasheridze88@gmail.com",
-        "password": "giogio"
+        "user": "Gio2",
+        "password": "giogio2",
+        "accessToken": "token2"
+      }
+    ],
+    "usersInfo": [
+      {
+        "id": 1,
+        "name": "Gio",
+        "username": "Davlasheridze",
+        "age": "27",
+        "Identification": "token1"
       },
       {
         "id": 2,
-        "user": "giodavlasheridze88@gmail.com",
-        "password": "giogio"
+        "name": "Mateo",
+        "username": "Flacone",
+        "age": "37",
+        "Identification": "token2"
       }
     ]
-  }
+}

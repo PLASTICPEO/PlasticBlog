@@ -3,10 +3,8 @@ import { Button, Modal, ConfigProvider } from "antd";
 import Footer from "./components/footer";
 import ModalHeader from "./components/header";
 
-import { useContext } from "react";
-import { AppContext } from "../../context/ContextProvider";
-
 import { ModalTypes } from "./modal.types";
+import { useModal } from "./hooks/useModal";
 
 const CustomModal: React.FC<ModalTypes> = ({
   as,
@@ -15,7 +13,7 @@ const CustomModal: React.FC<ModalTypes> = ({
   title,
   triggerProps,
 }) => {
-  const { open, showModal, hideModal } = useContext(AppContext);
+  const { open, showModal, hideModal } = useModal();
 
   const Trigger = as ? as : Button;
 
@@ -35,7 +33,6 @@ const CustomModal: React.FC<ModalTypes> = ({
 
       <Modal
         open={open}
-        onOk={hideModal}
         onCancel={hideModal}
         title={<ModalHeader title={title} />}
         footer={<Footer />}

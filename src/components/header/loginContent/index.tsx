@@ -1,12 +1,10 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Input, Button, ConfigProvider } from "antd";
 
-import { useContext } from "react";
-import { AppContext } from "../../../context/ContextProvider";
+import { useHeader } from "../hooks/useHeader";
 
-const LogInContent = () => {
-  const { onFinish } = useContext(AppContext);
-  const [form] = Form.useForm();
+const LogInContent: any = () => {
+  const { handleLogin, userInfo, requestToken, form } = useHeader();
 
   return (
     <ConfigProvider
@@ -22,8 +20,9 @@ const LogInContent = () => {
         form={form}
         name="horizontal_login"
         layout="vertical"
-        onFinish={onFinish}
+        onFinish={handleLogin}
       >
+        <div>{requestToken ? "" : <p>{userInfo.name}</p>}</div>
         <Form.Item
           name="Email"
           rules={[{ required: true, message: "Please input your email..." }]}
@@ -44,8 +43,11 @@ const LogInContent = () => {
             placeholder="Password"
           />
         </Form.Item>
-
-        <Button htmlType="submit">Log in</Button>
+        <div className="w-full flex items-center justify-center">
+          <Button htmlType="submit" className="w-[30%]">
+            Log in
+          </Button>
+        </div>
       </Form>
     </ConfigProvider>
   );
