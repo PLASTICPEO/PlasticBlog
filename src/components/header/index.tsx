@@ -7,7 +7,8 @@ import Logo from "../../assets/logo.svg";
 import LogInContent from "./loginContent";
 
 const Header = () => {
-  const { scrollY } = useHeader();
+  const { scrollY, handleLogin, userInfo, requestToken, loginRef } =
+    useHeader();
 
   const changeHeaderColor = scrollY < 290 ? "bg-[#FFC720]" : "bg-[#F6F6F4]";
   const changeHeaderButtonColor =
@@ -34,8 +35,13 @@ const Header = () => {
           }}
           buttonValue="Sign in"
           title="Welcome Back."
+          ref={loginRef}
         >
-          <LogInContent />
+          <LogInContent
+            handleLogin={handleLogin}
+            requestToken={requestToken}
+            userInfo={userInfo}
+          />
         </CustomModal>
         <CustomModal
           triggerProps={{

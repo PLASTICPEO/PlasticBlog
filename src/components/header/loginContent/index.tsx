@@ -1,10 +1,11 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Input, Button, ConfigProvider } from "antd";
+import { useForm } from "antd/es/form/Form";
 
 import { useHeader } from "../hooks/useHeader";
 
-const LogInContent: any = () => {
-  const { handleLogin, userInfo, requestToken, form } = useHeader();
+const LogInContent: any = ({ userInfo, requestToken, handleLogin }: any) => {
+  const [form] = useForm();
 
   return (
     <ConfigProvider
@@ -20,7 +21,10 @@ const LogInContent: any = () => {
         form={form}
         name="horizontal_login"
         layout="vertical"
-        onFinish={handleLogin}
+        onFinish={async (e) => {
+          await handleLogin(e);
+          form.resetFields();
+        }}
       >
         <div>{requestToken ? "" : <p>{userInfo.name}</p>}</div>
         <Form.Item
