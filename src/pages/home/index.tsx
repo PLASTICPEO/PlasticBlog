@@ -5,10 +5,10 @@ import Trending from "../../components/trending";
 
 const Home = (): JSX.Element => {
   return (
-    <div className="h-screen w-full">
-      <div className="pt-14">
+    <div className="h-screen w-full pt-16">
+      {/* <div className="pt-14">
         <TopContent />
-      </div>
+      </div> */}
 
       <div className="container mx-auto bg-[#FFFFFF]">
         <Trending />

@@ -1,5 +1,5 @@
-import axios from "axios";
 import { AUTH_TOKEN } from "./constants/constants";
+import axios from "axios";
 
 const token = localStorage.getItem(AUTH_TOKEN);
 const baseUrl = import.meta.env.VITE_BASE_URL;
@@ -23,8 +23,7 @@ export const setToken = (tokenType: any, token: string) => {
 
 const api = (http: any) => ({
   get: (url: any) => http.get(url),
-  post: (url: string, body: string, config: any) =>
-    http.post(url, body, config),
+  post: (url: string, body: string) => http.post(url, body),
 });
 
 export default api(axiosInstance);

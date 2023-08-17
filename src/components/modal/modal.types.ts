@@ -9,4 +9,5 @@ export interface ModalTypes {
   children: ReactNode;
   triggerProps?: any;
   as?: string;
+  ref?: any;
 }

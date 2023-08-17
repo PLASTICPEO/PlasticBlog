@@ -5,9 +5,9 @@ import ModalHeader from "./components/header";
 
 import { ModalTypes } from "./modal.types";
 import { useModal } from "./hooks/useModal";
-import { forwardRef, useEffect, useImperativeHandle } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 
-const CustomModal: React.FC<any> = forwardRef(
+const CustomModal: React.FC<ModalTypes> = forwardRef(
   ({ as, children, buttonValue, title, triggerProps }, ref) => {
     const { open, showModal, hideModal } = useModal();
 
@@ -24,7 +24,10 @@ const CustomModal: React.FC<any> = forwardRef(
         <div>
           <ConfigProvider
             theme={{
-              token: { colorPrimaryHover: "black" },
+              token: {
+                colorPrimaryHover: "text-[#FFFFFF]",
+                lineWidthFocus: 0,
+              },
             }}
           >
             <Trigger onClick={showModal} {...triggerProps}>
@@ -39,7 +42,7 @@ const CustomModal: React.FC<any> = forwardRef(
           title={<ModalHeader title={title} />}
           footer={<Footer />}
         >
-          <div>{children}</div>
+          <div id="mdl">{children}</div>
         </Modal>
       </div>
     );

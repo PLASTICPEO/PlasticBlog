@@ -5,15 +5,15 @@ import Wheaton from "../../assets/photos/wheaton.png";
 
 const Trending = () => {
   return (
-    <div className="p-2 mt-4 w-full border-b-[1px] border-[#EDEDE9] rounded-sm ">
+    <div className="p-2 w-full border-b-[1px] border-[#EDEDE9] rounded-sm ">
       <div className="flex">
         <span className="material-symbols-outlined flex items-center justify-center">
           trending_up
         </span>
-        <p className="m-2 text-lg font-Roboto">Trending</p>
+        <p className="m-2 text-lg font-Roboto">Trending on Plastic</p>
       </div>
 
-      <div className="grid grid-rows-2 grid-flow-col gap-4">
+      <div className="grid grid-rows-2 grid-flow-col ">
         <BlogItem
           title="Thank You to America’s Librarians for Protecting Our Freedom to Read"
           username="Barack Obama"

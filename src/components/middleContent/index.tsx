@@ -1,5 +1,4 @@
 import Item from "../item";
-
 import obama from "../../assets/photos/obama.png";
 
 const MiddleContent = () => {

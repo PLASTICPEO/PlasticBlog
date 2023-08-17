@@ -1,8 +1,10 @@
-import { ReactNode } from "react";
+// context.types.ts
+import { ReactNode, SetStateAction, Dispatch } from "react";
 
 export interface ContextTypes {
-  close: boolean;
-  closeModal: () => void;
+  isAuthenticated: boolean;
+  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
+  scrollPositionTop: () => void;
 }
 
 export interface ContextProviderTypes {

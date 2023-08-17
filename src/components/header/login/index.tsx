@@ -2,9 +2,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Input, Button, ConfigProvider } from "antd";
 import { useForm } from "antd/es/form/Form";
 
-import { useHeader } from "../hooks/useHeader";
-
-const LogInContent: any = ({ userInfo, requestToken, handleLogin }: any) => {
+const LogInContent: any = ({ handleLogin }: any) => {
   const [form] = useForm();
 
   return (
@@ -14,6 +12,7 @@ const LogInContent: any = ({ userInfo, requestToken, handleLogin }: any) => {
           colorPrimaryHover: "#70C1B3",
           colorText: "black",
           colorError: "#F47D7B",
+          colorBgTextActive: "none",
         },
       }}
     >
@@ -26,7 +25,6 @@ const LogInContent: any = ({ userInfo, requestToken, handleLogin }: any) => {
           form.resetFields();
         }}
       >
-        <div>{requestToken ? "" : <p>{userInfo.name}</p>}</div>
         <Form.Item
           name="Email"
           rules={[{ required: true, message: "Please input your email..." }]}
