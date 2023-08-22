@@ -20,7 +20,7 @@ const UserProfile = () => {
             trendNumber={""}
           />
         </div>
-        <div className="col-span-5 border-[#EFE7DA] border-l-[1px] h-[500px] pt-20 ">
+        <div className="col-span-5 border-[#F5F5F5] border-l-[1px] h-[500px] pt-20 ">
           <div className="py-8 px-5">
             <img
               src={LogoIcon}
@@ -30,7 +30,7 @@ const UserProfile = () => {
             <p className="font-[Roboto] text-xl font-bold">
               {userInfo.fullName}
             </p>
-            <p className="text-[#95C623] hover:text-[#002626] text-xs cursor-pointer mt-2">
+            <p className="text-[#4D8B31] hover:text-[#002626] text-xs cursor-pointer mt-2">
               Edit profile
             </p>
           </div>

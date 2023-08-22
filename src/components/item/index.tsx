@@ -30,9 +30,9 @@ const BlogItem: React.FC<ItemTypes> = ({
               {username}
             </p>
           </div>
-          <div>
+          <div className={blogThumbnail ? "w-[500px]" : ""}>
             <p className="font-extrabold leading-4 mt-2">{title}</p>
-            <p className="text-[#AEAEAD] text-sm ">{text}</p>
+            <p className="text-[#AEAEAD] text-sm truncate  ">{text}</p>
           </div>
 
           <div className="flex">
@@ -46,8 +46,8 @@ const BlogItem: React.FC<ItemTypes> = ({
           </div>
         </div>
       </div>
-      <div className={`w-48 h-36 p-2 ${blogThumbnail ? "block" : "hidden"}`}>
-        <img src={blogThumbnail} alt="" />
+      <div className={`w-48 h-36 p-5 ${blogThumbnail ? "block" : "hidden"}`}>
+        <img src={blogThumbnail} alt="tumbnile" className="w-full h-full " />
       </div>
     </div>
   );

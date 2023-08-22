@@ -2,8 +2,8 @@
 import { BrowserRouter as Router } from "react-router-dom";
 
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import ContextProvider from "./context/ContextProvider.tsx";
+import App from "./App";
+import ContextProvider from "./context/ContextProvider.js";
 import "./index.css";
 
 // const queryClient = new QueryClient();

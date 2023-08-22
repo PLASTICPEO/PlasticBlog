@@ -12,12 +12,12 @@ import {
 import obama from "../../../assets/photos/obama.png";
 
 const UserDropDown: React.FC = () => {
-  const { onClick } = useDropDown();
+  const { onClick, userProfileRoute } = useDropDown();
 
   const items: MenuProps["items"] = [
     {
       label: (
-        <Link to={`/user-profile`} className="flex items-center">
+        <Link to={`/profile/${userProfileRoute}`} className="flex items-center">
           <UserOutlined className="mr-1" />
           <p>Profile</p>
         </Link>
@@ -46,21 +46,20 @@ const UserDropDown: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <Link to="/user-profile">
-        <img
-          src={obama}
-          alt="profile picture"
-          className="w-8 h-8 rounded-full mx-4"
-        />
-      </Link>
-
       <div className="mt-1 ">
         <Dropdown
           menu={{ items, onClick }}
           trigger={["click"]}
           className="text-[#E0E0E2] hover:text-[#EAEAEC]"
         >
-          <DownOutlined />
+          <div className="flex cursor-pointer">
+            <img
+              src={obama}
+              alt="profile picture"
+              className="w-8 h-8 rounded-full ml-3 mr-2"
+            />
+            <DownOutlined />
+          </div>
         </Dropdown>
       </div>
     </div>

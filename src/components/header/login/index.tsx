@@ -2,7 +2,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Input, Button, ConfigProvider } from "antd";
 import { useForm } from "antd/es/form/Form";
 
-const LogInContent: any = ({ handleLogin }: any) => {
+const LogInContent: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
   const [form] = useForm();
 
   return (
@@ -18,7 +18,6 @@ const LogInContent: any = ({ handleLogin }: any) => {
     >
       <Form
         form={form}
-        name="horizontal_login"
         layout="vertical"
         onFinish={async (e) => {
           await handleLogin(e);

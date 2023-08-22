@@ -25,7 +25,7 @@ const ContextProvider = ({ children }: ContextProviderTypes) => {
     if (token) {
       setIsAuthenticated(false);
     }
-  }, [isAuthenticated]);
+  }, []);
 
   return (
     <AppContext.Provider

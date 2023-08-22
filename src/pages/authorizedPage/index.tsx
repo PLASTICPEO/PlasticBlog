@@ -1,14 +1,10 @@
 import MiddleContent from "../../components/middleContent";
 import SideContent from "../../components/sideContent";
-import TopContent from "../../components/topContent";
-import Trending from "../../components/trending";
 
-const Home: React.FC = () => {
+const AuthorizedPage = () => {
   return (
-    <div className="h-screen w-full">
-      <TopContent />
-      <div className="container mx-auto bg-[#FFFFFF]">
-        <Trending />
+    <div className="h-screen w-full ">
+      <div className="container mx-auto bg-[#FFFFFF] mt-18">
         <div className="grid grid-cols-12 gap-1 pt-14">
           <div className="col-span-7">
             <MiddleContent />
@@ -22,4 +18,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default AuthorizedPage;

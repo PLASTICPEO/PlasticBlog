@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHeader } from "./hooks/useHeader";
 import { AppContext } from "../../context/ContextProvider";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import CustomModal from "../modal";
 import LogInContent from "./login";
@@ -10,23 +10,26 @@ import AuthHeader from "./authHeader";
 import Register from "./register";
 import Logo from "../../assets/logo.svg";
 
-const Header: React.FC<{ isWhite?: boolean }> = ({ isWhite }) => {
+const Header: React.FC<{ isColor?: string }> = ({ isColor }) => {
   const { scrollPositionTop } = useContext(AppContext);
   const { scrollY, handleLogin, handleRegister, loginRef, isAuthenticated } =
     useHeader();
+  const [headerColor, setHeaderColor] = useState("");
+  useEffect(() => {
+    setHeaderColor(`${isColor}`);
+  }, [isColor]);
 
-  const isAuthHeaderColor =
-    !isAuthenticated || isWhite ? "bg-[#FFFFFF] h-12 border-[#EFE7DA]" : "h-16";
-  const changeHeaderColor = scrollY < 290 ? "bg-[#FFC720]" : "bg-[#F6F6F4]";
+  const isAuthHeaderColor = !isAuthenticated ? "h-12" : "h-16";
+  const changeHeaderColor = scrollY < 470 ? "bg-[#A4C794]" : "bg-[#F6F6F4]";
   const margineX = isAuthenticated ? "px-20" : "px-4";
   const changeHeaderButtonColor =
-    scrollY < 290
+    scrollY < 470
       ? "text-[#FFFFFF] border-none bg-[#0B0014] "
       : "text-[#FFFFFF] border-none bg-[#0B6E4F]";
 
   return (
     <div
-      className={`fixed top-[0%] left-[0%] ${isAuthHeaderColor} flex items-center justify-between transition-colors ease-in-out duration-700    w-full p-4 border-b-[1px] z-50 border-[black] ${margineX} ${changeHeaderColor}`}
+      className={`fixed top-[0%] left-[0%] ${isAuthHeaderColor} flex items-center justify-between transition-colors ease-in-out duration-200 w-full p-4 border-b-[1px] z-50 ${headerColor}  ${margineX} ${changeHeaderColor}`}
     >
       <div>
         <Link to="/">
@@ -41,6 +44,7 @@ const Header: React.FC<{ isWhite?: boolean }> = ({ isWhite }) => {
                 isAuthenticated ? "w-12" : "w-10"
               } rounded-full hover:animate-spin`}
             />
+
             <p
               className={`${
                 isAuthenticated ? "text-4xl" : "text-2xl"
@@ -54,7 +58,14 @@ const Header: React.FC<{ isWhite?: boolean }> = ({ isWhite }) => {
 
       <div className="flex">
         <div className="flex">
-          <div className={`flex ${isAuthenticated ? "visible" : "hidden"}`}>
+          <div
+            className={`flex items-center ${
+              isAuthenticated ? "visible" : "hidden"
+            }`}
+          >
+            <Link to="/about">
+              <p className="text-Roboto text-sm cursor-pointer">Our story</p>
+            </Link>
             {/* Log in modal */}
             <CustomModal
               triggerProps={{
@@ -73,6 +84,7 @@ const Header: React.FC<{ isWhite?: boolean }> = ({ isWhite }) => {
               }}
               buttonValue="Sign up"
               title="Join us."
+              ref={loginRef}
             >
               <Register handleRegister={handleRegister} />
             </CustomModal>{" "}

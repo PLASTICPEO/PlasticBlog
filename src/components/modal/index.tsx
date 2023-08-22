@@ -17,6 +17,9 @@ const CustomModal: React.FC<ModalTypes> = forwardRef(
       closeModal: () => {
         hideModal();
       },
+      openModal: () => {
+        showModal();
+      },
     }));
 
     return (

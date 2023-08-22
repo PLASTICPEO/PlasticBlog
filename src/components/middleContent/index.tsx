@@ -1,69 +1,25 @@
-import Item from "../item";
-import obama from "../../assets/photos/obama.png";
+import BlogItem from "../item";
+import { useMiddleContent } from "./hooks/useMiddleContetn";
 
 const MiddleContent = () => {
+  const { blogs } = useMiddleContent();
   return (
     <div className="p-2">
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
-      <Item
-        title="Dear Alt-Twitter Designers: It’s about the network!"
-        text="Last week, tech commentators were flush with stories about the speed of new users on Threads. Unprecedented downloads! A sign"
-        username="danah boyd"
-        userPhoto={obama}
-        uploadDate="Jul 19"
-        trendNumber=""
-        blogThumbnail={obama}
-        category="Social media"
-      />
+      {blogs.map((items: any, index: any) => {
+        return (
+          <BlogItem
+            key={index}
+            username={items.username}
+            userPhoto={items.avatar}
+            title={items.title}
+            text={items.text}
+            uploadDate={items.uploadDate}
+            blogThumbnail={items.avatar}
+            category={items.category}
+            trendNumber=""
+          />
+        );
+      })}
     </div>
   );
 };

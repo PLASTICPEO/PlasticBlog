@@ -20,7 +20,6 @@ const Register: React.FC<{ handleRegister: any }> = ({
     >
       <Form
         form={form}
-        name="horizontal_login"
         layout="vertical"
         onFinish={async (e) => {
           await handleRegister(e);
