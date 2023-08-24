@@ -3,7 +3,6 @@
   <h3 align="center">BLOGPlastic</h3>
 
   <p align="center">
-    Portfolio project
     <br />
     <br />
     <a href="https://booreykooo.netlify.app/">View Demo</a>
