@@ -1,10 +1,7 @@
-import ship from "../../assets/photos/ship.svg";
-import { useContext, useRef } from "react";
 import CustomModal from "../modal";
 import LogInContent from "../header/login";
-import api from "../../api/api";
-import { setToken } from "../../api/api";
-import { AppContext } from "../../context/ContextProvider";
+import ship from "../../assets/photos/ship.svg";
+
 import { useTopContetn } from "./hooks/useTopContent";
 
 const TopContent: React.FC = () => {

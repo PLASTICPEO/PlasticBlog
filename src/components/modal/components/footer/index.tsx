@@ -1,10 +1,8 @@
-import { Button, ConfigProvider } from "antd";
+import { ConfigProvider } from "antd";
 
 const Footer: React.FC<{
   hideModal?: () => void;
-  // authPerson?: () => void;
-  // btnValue?: any;
-}> = ({ hideModal }) => {
+}> = () => {
   return (
     <div className="flex items-center justify-center ">
       <ConfigProvider

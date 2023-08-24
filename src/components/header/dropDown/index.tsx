@@ -1,7 +1,7 @@
 import { MenuProps } from "antd";
 import { Dropdown } from "antd";
 import { useDropDown } from "./hooks/useDropDown";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   DownOutlined,
   UserOutlined,

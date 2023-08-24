@@ -5,8 +5,7 @@ import { AUTH_TOKEN } from "../../../../api/constants/constants";
 import api from "../../../../api/api";
 
 export const useDropDown = () => {
-  const { setIsAuthenticated, scrollPositionTop, isAuthenticated } =
-    useContext(AppContext);
+  const { setIsAuthenticated, scrollPositionTop } = useContext(AppContext);
   const [userProfileRoute, setUserProfileRoute] = useState("");
 
   useEffect(() => {

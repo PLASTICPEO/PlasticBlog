@@ -1,6 +1,5 @@
 import { useUser } from "./hooks/useUser";
 import LogoIcon from "../../assets/logo.svg";
-import { Header } from "antd/es/layout/layout";
 import BlogItem from "../../components/item";
 
 const UserProfile = () => {

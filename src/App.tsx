@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import DefaultLayout from "./layout";
 import Home from "./pages/home";
@@ -22,11 +22,11 @@ const App = () => {
         path="/"
         element={
           !isAuthenticated ? (
-            <DefaultLayout isColor="bg-[white]">
+            <DefaultLayout dictatedColor="bg-[white]">
               <AuthorizedPage />
             </DefaultLayout>
           ) : (
-            <DefaultLayout isColor="border-[black]">
+            <DefaultLayout dictatedColor="border-[black]">
               <Home />
             </DefaultLayout>
           )
@@ -35,7 +35,7 @@ const App = () => {
       <Route
         path={"/profile/:user"}
         element={
-          <DefaultLayout isColor="bg-[white] border-[#EBEAEA]">
+          <DefaultLayout dictatedColor="bg-[white] border-[#EBEAEA]">
             <ProtectedRoute>
               <UserProfile />
             </ProtectedRoute>
@@ -45,7 +45,7 @@ const App = () => {
       <Route
         path="/category/:topic"
         element={
-          <DefaultLayout isColor="bg-[white] ">
+          <DefaultLayout dictatedColor="bg-[white] ">
             <Category />
           </DefaultLayout>
         }
@@ -53,7 +53,7 @@ const App = () => {
       <Route
         path="/write"
         element={
-          <DefaultLayout isColor="bg-[white]">
+          <DefaultLayout dictatedColor="bg-[white]">
             <WritingPage />
           </DefaultLayout>
         }
@@ -61,7 +61,7 @@ const App = () => {
       <Route
         path="/about"
         element={
-          <DefaultLayout isColor="bg-[#686464] border-[black]">
+          <DefaultLayout dictatedColor="bg-[#2A2A28] border-[black]" isWhite>
             <About />
           </DefaultLayout>
         }

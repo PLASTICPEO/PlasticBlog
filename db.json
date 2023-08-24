@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 4,
+      "fullName": "Gio Davlasheridze",
+      "email": "test88@gmail.com",
+      "password": "giogio"
+    },
+    {
+      "email": "test88@gmail.com",
+      "password": "giogio",
+      "id": 5
+    },
+    {
+      "email": "test88@gmail.com",
+      "password": "giogio",
+      "id": 6
+    },
+    {
+      "email": "test88@gmail.com",
+      "password": "giogio",
+      "id": 7
+    }
+  ]
+}

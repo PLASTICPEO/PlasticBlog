@@ -5,7 +5,7 @@ import ModalHeader from "./components/header";
 
 import { ModalTypes } from "./modal.types";
 import { useModal } from "./hooks/useModal";
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 
 const CustomModal: React.FC<ModalTypes> = forwardRef(
   ({ as, children, buttonValue, title, triggerProps }, ref) => {
