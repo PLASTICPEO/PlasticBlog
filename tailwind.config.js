@@ -6,6 +6,8 @@ export default {
       fontFamily: {
         lora: ["Lora", "serif"],
         Roboto: ["Roboto", "sans-serif"],
+        fontSans: ["Open Sans, sans-serif"],
+        Lato: ["Lato", "sans-serif"],
       },
     },
   },
