@@ -5,7 +5,7 @@
   <p align="center">
     <br />
     <br />
-    <a href="https://booreykooo.netlify.app/">View Demo</a>
+    <a href="https://blogplastic.onrender.com/">View Demo</a>
   </p>
 </p>
 
@@ -14,6 +14,7 @@
 - [React](https://react.dev/)
 - [TailWindCSS](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
+- [Ant Design](https://ant.design/)
 
 ## Getting Started
 
@@ -23,7 +24,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
 
-   git clone https://github.com/PLASTICPEO/NLYC-assignment
+   git clone https://github.com/PLASTICPEO/PlasticBlog.git
 
 2. Install packages
 

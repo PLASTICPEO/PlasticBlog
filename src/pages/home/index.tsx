@@ -9,7 +9,7 @@ const Home: React.FC = () => {
       <TopContent />
       <div className="container mx-auto bg-[#FFFFFF]">
         <Trending />
-        <div className="grid grid-cols-12 gap-1 pt-14">
+        <div className="grid xl:grid-cols-12 grid-cols-12  gap-1 pt-14">
           <div className="col-span-7">
             <MiddleContent />
           </div>

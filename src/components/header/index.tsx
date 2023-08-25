@@ -28,7 +28,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
   }, [dictatedColor]);
 
   const isAuthHeaderColor = !isAuthenticated ? "h-12" : "h-16";
-  const margineX = isAuthenticated ? "px-20" : "px-4";
+  const margineX = isAuthenticated ? "xl:px-20 p-0" : "px-4";
   const changeHeaderButtonColor =
     scrollY < 470
       ? "text-[#FFFFFF] border-none bg-[#0B0014] "
@@ -36,7 +36,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
 
   return (
     <div
-      className={`fixed top-[0%] left-[0%] flex items-center justify-between transition-colors ease-in-out duration-200 w-full p-4 border-b-[1px] z-50  ${headerColor} ${isAuthHeaderColor} ${margineX} `}
+      className={`fixed top-[0%] left-[0%] flex items-center justify-between transition-colors ease-in-out duration-200 xl:w-full p-4 border-b-[1px] z-50  ${headerColor} ${isAuthHeaderColor} ${margineX} `}
     >
       {contextHolder}
       <div>
@@ -57,7 +57,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
 
             <p
               className={`${
-                isAuthenticated ? "text-4xl" : "text-2xl"
+                isAuthenticated ? "xl:text-4xl text-2xl" : "text-2xl"
               } font-lora  font-bold ${
                 isWhite ? "text-[#E8EAEE]" : "text-[black]"
               }`}
