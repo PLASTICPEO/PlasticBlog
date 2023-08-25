@@ -28,7 +28,6 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
   }, [dictatedColor]);
 
   const isAuthHeaderColor = !isAuthenticated ? "h-12" : "h-16";
-  const changeHeaderColor = scrollY < 470 ? "bg-[#A4C794]" : "bg-[#F6F6F4]";
   const margineX = isAuthenticated ? "px-20" : "px-4";
   const changeHeaderButtonColor =
     scrollY < 470

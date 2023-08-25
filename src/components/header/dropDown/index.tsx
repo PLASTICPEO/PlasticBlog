@@ -10,7 +10,6 @@ import {
 } from "@ant-design/icons";
 
 import obama from "../../../assets/photos/obama.png";
-import { useEffect } from "react";
 
 const UserDropDown: React.FC = () => {
   const { onClick, userProfileRoute } = useDropDown();
