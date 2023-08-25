@@ -9,14 +9,12 @@ import LogInContent from "./login";
 import AuthHeader from "./authHeader";
 import Register from "./register";
 
-
 const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
   dictatedColor,
   isWhite,
 }) => {
   const { scrollPositionTop } = useContext(AppContext);
   const {
-    scrollY,
     handleLogin,
     handleRegister,
     loginRef,
@@ -39,7 +37,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
 
   return (
     <div
-      className={`fixed top-[0%] left-[0%] ${isAuthHeaderColor} flex items-center justify-between transition-colors ease-in-out duration-200 w-full p-4 border-b-[1px] z-50 ${headerColor}  ${margineX} ${changeHeaderColor}`}
+      className={`fixed top-[0%] left-[0%] flex items-center justify-between transition-colors ease-in-out duration-200 w-full p-4 border-b-[1px] z-50  ${headerColor} ${isAuthHeaderColor} ${margineX} `}
     >
       {contextHolder}
       <div>
@@ -49,10 +47,10 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
             onClick={scrollPositionTop}
           >
             <span
-              className={`material-symbols-outlined ${
+              className={`material-symbols-outlined  ${
                 isWhite ? "text-[#E8EAEE]" : "text-[black]"
               } ${
-                isAuthenticated ? "text-4xl" : "text-2xl"
+                isAuthenticated ? "text-5xl" : "text-4xl"
               } rounded-full hover:animate-spin`}
             >
               mode_fan

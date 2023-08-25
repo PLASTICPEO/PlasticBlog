@@ -5,12 +5,15 @@ import ContextProvider from "./context/ContextProvider.js";
 import App from "./App";
 import "./index.css";
 
-const container: any = document.getElementById("root");
-const root = createRoot(container);
-root.render(
-  <ContextProvider>
-    <Router>
-      <App />
-    </Router>
-  </ContextProvider>
-);
+const container: HTMLElement | null = document.getElementById("root");
+
+if (container) {
+  const root = createRoot(container);
+  root.render(
+    <ContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </ContextProvider>
+  );
+}

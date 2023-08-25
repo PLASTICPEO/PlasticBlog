@@ -10,7 +10,6 @@ interface LoginRefElement {
 }
 
 export const useHeader = () => {
-  const [scrollY, setScrollY] = useState(0);
   const { isAuthenticated, setIsAuthenticated } = useContext(AppContext);
 
   const loginRef = useRef<LoginRefElement | null>(null);
@@ -71,21 +70,8 @@ export const useHeader = () => {
     });
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollY]);
-
   return {
     loginRef,
-    scrollY,
     handleLogin,
     handleRegister,
     isAuthenticated,

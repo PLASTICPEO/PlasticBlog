@@ -3,6 +3,7 @@ import { ContextTypes, ContextProviderTypes } from "./context.types";
 import { AUTH_TOKEN } from "../api/constants/constants";
 
 export const AppContext = createContext<ContextTypes>({
+  scrollY: NaN,
   isAuthenticated: false,
   setIsAuthenticated: () => true,
   scrollPositionTop: () => null,
@@ -10,6 +11,7 @@ export const AppContext = createContext<ContextTypes>({
 
 const ContextProvider = ({ children }: ContextProviderTypes) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
+  const [scrollY, setScrollY] = useState(0);
 
   const scrollPositionTop = () => {
     window.scrollTo({
@@ -18,6 +20,17 @@ const ContextProvider = ({ children }: ContextProviderTypes) => {
       behavior: "smooth",
     });
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollY]);
 
   useEffect(() => {
     const token = localStorage.getItem(AUTH_TOKEN);
@@ -30,6 +43,7 @@ const ContextProvider = ({ children }: ContextProviderTypes) => {
   return (
     <AppContext.Provider
       value={{
+        scrollY,
         isAuthenticated,
         setIsAuthenticated,
         scrollPositionTop,

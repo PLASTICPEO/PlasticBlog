@@ -5,7 +5,8 @@ import { AUTH_TOKEN } from "../../../../api/constants/constants";
 import api from "../../../../api/api";
 
 export const useDropDown = () => {
-  const { setIsAuthenticated, scrollPositionTop } = useContext(AppContext);
+  const { setIsAuthenticated, scrollPositionTop, isAuthenticated } =
+    useContext(AppContext);
   const [userProfileRoute, setUserProfileRoute] = useState("");
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export const useDropDown = () => {
         setUserProfileRoute(userProfile.fullName);
       });
     }
-  }, []);
+  }, [isAuthenticated]);
 
   const onClick: MenuProps["onClick"] = ({ key }) => {
     switch (key) {

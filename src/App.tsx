@@ -13,7 +13,9 @@ import WrongPage from "./pages/wrongPage";
 import About from "./pages/about";
 
 const App = () => {
-  const { isAuthenticated } = useContext(AppContext);
+  const { isAuthenticated, scrollY } = useContext(AppContext);
+  const changeHeaderColor =
+    scrollY < 470 ? "bg-[#A4C794] border-[black]" : "bg-[#F6F6F4]";
 
   return (
     <Routes>
@@ -26,7 +28,7 @@ const App = () => {
               <AuthorizedPage />
             </DefaultLayout>
           ) : (
-            <DefaultLayout dictatedColor="border-[black]">
+            <DefaultLayout dictatedColor={changeHeaderColor}>
               <Home />
             </DefaultLayout>
           )
@@ -61,7 +63,7 @@ const App = () => {
       <Route
         path="/about"
         element={
-          <DefaultLayout dictatedColor="bg-[#2A2A28] border-[black]" isWhite>
+          <DefaultLayout dictatedColor="bg-[#2A2A28] border-[#1F1F1E]" isWhite>
             <About />
           </DefaultLayout>
         }
