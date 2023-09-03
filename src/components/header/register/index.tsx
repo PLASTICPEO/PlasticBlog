@@ -37,7 +37,13 @@ const Register: React.FC<{ handleRegister: any }> = ({
         </Form.Item>
         <Form.Item
           name="Email"
-          rules={[{ required: true, message: "Please input your email..." }]}
+          rules={[
+            {
+              required: true,
+              message: "Please input your email...",
+              type: "email",
+            },
+          ]}
         >
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
@@ -47,7 +53,10 @@ const Register: React.FC<{ handleRegister: any }> = ({
 
         <Form.Item
           name="password"
-          rules={[{ required: true, message: "Please input your password..." }]}
+          rules={[
+            { required: true, message: "Please input your password..." },
+            { min: 8 },
+          ]}
         >
           <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}

@@ -9,6 +9,10 @@
   </p>
 </p>
 
+### The importance of the project
+
+This project outlines the authentication/registration logic
+
 ### Built With
 
 - [React](https://react.dev/)
