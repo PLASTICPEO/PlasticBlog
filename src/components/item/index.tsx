@@ -12,15 +12,17 @@ const BlogItem: React.FC<ItemTypes> = ({
   category,
 }) => {
   return (
-    <div className="flex bg-[#FFFFFF] rounded-sm font-Roboto">
-      <div className="h-full text-3xl text-[#F3F5F7]">
-        <p className={`${trendNumber ? "visible" : "hidden"} p-2`}>
-          {trendNumber}
-        </p>
+    <div className="flex items-start justify-between bg-[#FFFFFF] rounded-sm font-Roboto">
+      <div
+        className={`h-full text-3xl text-[#F3F5F7] ${
+          trendNumber ? "flex" : "hidden"
+        }`}
+      >
+        <p className={` p-2`}>{trendNumber}</p>
       </div>
       <div className="p-3">
         <div>
-          <div className="flex items-center">
+          <div className="flex">
             <img
               className="w-5 h-5 rounded-full hover:animate-pulse cursor-pointer"
               src={userPhoto ? userPhoto : logo}
@@ -30,16 +32,18 @@ const BlogItem: React.FC<ItemTypes> = ({
               {username}
             </p>
           </div>
-          <div className={blogThumbnail ? "w-wrap" : ""}>
+          <div className={blogThumbnail ? "xl:w-96 w-36" : ""}>
             <p className="font-extrabold leading-4 mt-2">{title}</p>
-            <p className="text-[#AEAEAD] text-sm truncate w-56 ">{text}</p>
+            <p className="text-[#AEAEAD] text-sm truncate break-words ">
+              {text}
+            </p>
           </div>
 
           <div className="flex">
             <p className="text-xs text-[#D4D8D8] py-1">{uploadDate}</p>
-            <div className={`${category ? "flex" : "hidden"}`}>
+            <div className={`${category ? " flex" : "hidden"}`}>
               <p className="text-xs text-[#D4D8D8] mx-1 p-1">·</p>
-              <p className="text-xs bg-[#F5F5F5] text-[#AEAEAD] rounded-xl text-center jusitfy-center w-wrap px-3 py-1">
+              <p className="text-xs bg-[#F5F5F5] text-[#AEAEAD] rounded-xl text-center jusitfy-center w-20 p-1">
                 {category}
               </p>
             </div>
