@@ -37,7 +37,7 @@ const Trending: React.FC = () => {
         />
         <BlogItem
           title="Once Bitten"
-          username="M.G. Siegler"
+          username="Ukraine Now Using “Cardboard Drones” to Devastate Russian Airfields"
           userPhoto={""}
           uploadDate="Jul 24"
           trendNumber="04"
