@@ -9,11 +9,11 @@ const Home: React.FC = () => {
       <TopContent />
       <div className="container mx-auto bg-[#FFFFFF]">
         <Trending />
-        <div className="grid xl:grid-cols-12 grid-cols-12  gap-1 pt-14">
-          <div className="col-span-7">
+        <div className="grid xl:grid-cols-12 grid-cols-1  gap-1 pt-14">
+          <div className="xl:col-span-7 xl:order-1 order-2">
             <MiddleContent />
           </div>
-          <div className="col-span-5">
+          <div className="xl:col-span-5 xl:order-2 order-">
             <SideContent />
           </div>
         </div>

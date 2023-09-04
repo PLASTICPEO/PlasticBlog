@@ -13,7 +13,7 @@ const Trending: React.FC = () => {
         <p className="m-2 text-lg font-Roboto">Trending on Plastic</p>
       </div>
 
-      <div className="grid grid-rows-2 grid-flow-col gap-1 ">
+      <div className="grid xl:grid-cols-3 grid-cols-1 gap-1 ">
         <BlogItem
           title="Thank You to America’s Librarians for Protecting Our Freedom to Read"
           username="Barack Obama"

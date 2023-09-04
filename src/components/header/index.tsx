@@ -36,7 +36,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
 
   return (
     <div
-      className={`fixed top-[0%] left-[0%] flex items-center justify-between transition-colors ease-in-out duration-200 xl:w-full p-4 border-b-[1px] z-50  ${headerColor} ${isAuthHeaderColor} ${margineX} `}
+      className={`fixed top-[0%] left-[0%] flex items-center justify-between transition-colors ease-in-out duration-200 w-full p-4 border-b-[1px] z-50  ${headerColor} ${isAuthHeaderColor} ${margineX} `}
     >
       {contextHolder}
       <div>
@@ -57,7 +57,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
 
             <p
               className={`${
-                isAuthenticated ? "xl:text-4xl text-2xl" : "text-2xl"
+                isAuthenticated ? "xl:text-4xl text-lg" : "text-2xl"
               } font-lora  font-bold ${
                 isWhite ? "text-[#E8EAEE]" : "text-[black]"
               }`}
@@ -77,7 +77,7 @@ const Header: React.FC<{ dictatedColor?: string; isWhite?: boolean }> = ({
           >
             <Link to="/about">
               <p
-                className={`text-Roboto text-sm cursor-pointer ${
+                className={`xl:block hidden text-Roboto text-sm cursor-pointer ${
                   isWhite ? "text-[#E8EAEE]" : "text-[black]"
                 }`}
               >

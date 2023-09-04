@@ -30,16 +30,16 @@ const BlogItem: React.FC<ItemTypes> = ({
               {username}
             </p>
           </div>
-          <div className={blogThumbnail ? "w-[500px]" : ""}>
+          <div className={blogThumbnail ? "w-wrap" : ""}>
             <p className="font-extrabold leading-4 mt-2">{title}</p>
-            <p className="text-[#AEAEAD] text-sm truncate  ">{text}</p>
+            <p className="text-[#AEAEAD] text-sm truncate w-56 ">{text}</p>
           </div>
 
           <div className="flex">
             <p className="text-xs text-[#D4D8D8] py-1">{uploadDate}</p>
-            <div className={`${category ? "block flex" : "hidden"}`}>
+            <div className={`${category ? "flex" : "hidden"}`}>
               <p className="text-xs text-[#D4D8D8] mx-1 p-1">·</p>
-              <p className="text-xs bg-[#F5F5F5] text-[#AEAEAD] rounded-xl text-center jusitfy-center w-20 p-1">
+              <p className="text-xs bg-[#F5F5F5] text-[#AEAEAD] rounded-xl text-center jusitfy-center w-wrap px-3 py-1">
                 {category}
               </p>
             </div>
